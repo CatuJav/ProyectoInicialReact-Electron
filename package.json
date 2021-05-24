@@ -20,7 +20,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "empaquetar":"electron-packager .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "./",
+  "main": "src/electron-starter.js",
+  "devDependencies": {
+    "electron": "^12.0.9",
+    "electron-packager": "^15.2.0"
   }
 }
