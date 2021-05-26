@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  
+  const [numero, setNumero] = useState(0)
+
+  const aumentarNumero=()=>{
+    setNumero(numero+1);
+  }
+  const disminuirNumero=()=>{
+    setNumero(numero-1);
+  }
 
   return (
     <div>
       <h1>React + Electron </h1>
       <h1>Modo Dev</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cum autem earum omnis culpa dolor quibusdam corrupti vero adipisci, ratione, ullam placeat natus cumque necessitatibus quasi praesentium odit? Officiis, facere?</p>
-      <h2>Lorem, ipsum dolor sit <strong>amet consectetur adipisicing elit. Eligendi ea</strong> reprehenderit nulla quam molestias explicabo sunt fugit recusandae neque iste consequuntur in quod perspiciatis, saepe fugiat. Aperiam cupiditate beatae expedita.</h2>
+      
+      <h2>{numero}</h2>
+      <button onClick={()=>aumentarNumero()}>Aumentar</button>
+      <button onClick={()=>disminuirNumero()}>Disminuir</button>
+      
+
     </div>
   );
 }

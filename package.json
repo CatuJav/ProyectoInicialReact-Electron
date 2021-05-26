@@ -22,8 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "empaquetar":"electron-packager .",
-    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron ."
+    "empaquetar": "electron-packager .",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"set ELECTRON_START_URL=http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,8 @@
   "homepage": "./",
   "main": "src/electron-starter.js",
   "devDependencies": {
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
     "electron": "^12.0.9",
     "electron-packager": "^15.2.0"
   }
