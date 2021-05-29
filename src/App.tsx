@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+const electron =window.require('electron');
+const remote= electron.remote;
+const {dialog}=remote;
+
 
 function App() {
   const [numero, setNumero] = useState(0)
@@ -18,8 +22,10 @@ function App() {
       <h2>{numero}</h2>
       <button onClick={()=>aumentarNumero()}>Aumentar</button>
       <button onClick={()=>disminuirNumero()}>Disminuir</button>
-      
-
+      <button onClick={()=>{
+        console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
+      }}>Dialogo</button>
+        
     </div>
   );
 }
